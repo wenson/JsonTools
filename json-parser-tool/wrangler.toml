@@ -1,0 +1,13 @@
+# Cloudflare Pages 配置文件
+name = "json-parser-tool"
+compatibility_date = "2025-01-01"
+
+# Pages 项目配置
+pages_build_output_dir = "out"
+
+[build]
+command = "pnpm build"
+
+[build.environment]
+NODE_VERSION = "20"
+PNPM_VERSION = "8"

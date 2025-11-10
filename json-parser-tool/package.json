@@ -11,7 +11,10 @@
     "format:check": "prettier --check .",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "pages:build": "pnpm build",
+    "pages:dev": "pnpm dev",
+    "pages:deploy": "pnpm build"
   },
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",
