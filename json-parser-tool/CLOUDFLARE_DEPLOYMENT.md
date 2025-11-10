@@ -5,11 +5,27 @@
 ## 配置说明
 
 ### 构建设置
+
+**重要**: Cloudflare Pages 的构建配置需要在 **Dashboard 界面** 中设置，不能在 `wrangler.toml` 中配置。
+
+#### 在 Cloudflare Dashboard 中配置：
 - **框架预设**: Next.js (Static HTML Export)
 - **构建命令**: `pnpm build`
 - **构建输出目录**: `out`
+- **根目录**: `json-parser-tool`
 - **Node 版本**: 20
-- **包管理器**: pnpm
+- **环境变量**: 
+  - `NODE_VERSION=20`
+  - `PNPM_VERSION=8` (可选，Cloudflare 会自动检测)
+
+#### wrangler.toml 配置：
+仅用于指定项目名称和输出目录，不包含构建命令。
+
+```toml
+name = "json-parser-tool"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "out"
+```
 
 ### 环境变量
 如需配置环境变量，在 Cloudflare Pages 控制台的 Settings > Environment Variables 中添加。

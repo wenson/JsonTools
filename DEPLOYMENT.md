@@ -45,18 +45,22 @@
    - 选择 `JsonTools` 仓库
 
 2. **配置构建**
+   
+   **重要提示**: 构建配置必须在 Cloudflare Dashboard 中设置，不能在 wrangler.toml 中配置。
+   
    ```
    Framework preset: Next.js (Static HTML Export)
    Build command: pnpm build
    Build output directory: out
    Root directory: json-parser-tool
+   Node version: 20
    ```
 
-3. **环境变量**（可选）
+3. **环境变量**（在 Dashboard 中设置）
    ```
    NODE_VERSION=20
-   PNPM_VERSION=8
    ```
+   注意：PNPM 会被自动检测，无需手动设置。
 
 4. **部署**
    - 点击 "Save and Deploy"
