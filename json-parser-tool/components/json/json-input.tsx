@@ -10,11 +10,11 @@ import dynamic from 'next/dynamic';
 import { JSONInputProps } from '@/types/json';
 import { Button } from '@/components/ui/button';
 import { ErrorMessage } from '@/components/ui/error-message';
-import { Loading } from '@/components/ui/loading';
+import { EditorSkeleton } from '@/components/ui/loading';
 
 // 动态导入 Monaco Editor 以优化首次加载
 const Editor = dynamic(() => import('@monaco-editor/react'), {
-  loading: () => <Loading />,
+  loading: () => <EditorSkeleton />,
   ssr: false,
 });
 
@@ -53,7 +53,15 @@ function JSONInputComponent({
             scrollBeyondLastLine: false,
             wordWrap: 'on',
             automaticLayout: true,
+            // 性能优化
+            quickSuggestions: false,
+            folding: true,
+            foldingStrategy: 'indentation',
+            renderLineHighlight: 'line',
+            occurrencesHighlight: 'off',
+            renderValidationDecorations: 'on',
           }}
+          loading={<EditorSkeleton />}
         />
       </div>
     </div>
