@@ -4,7 +4,7 @@
 
 export function Header() {
   return (
-    <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="fixed inset-x-0 top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center px-4">
         <h1 className="text-2xl font-bold">JSON Parser Tool</h1>
         <p className="ml-4 text-sm text-muted-foreground">

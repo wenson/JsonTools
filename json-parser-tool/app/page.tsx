@@ -69,7 +69,8 @@ export default function Home() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col">
+    // Add top padding to offset the fixed header (h-16)
+    <div className="flex min-h-screen flex-col pt-16">
       <Header />
       
       <div className="flex-1 overflow-hidden">
